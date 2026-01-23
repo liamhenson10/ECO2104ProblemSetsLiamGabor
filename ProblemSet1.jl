@@ -126,3 +126,5 @@ plot(vfi_solver(N=1001)[2], vfi_solver(N=1001)[4], xlabel="Capital (k)",
     ylabel="Savings Function g(k)",
     title="Value Function Iteration Result",
     legend=false)
+
+# Test
