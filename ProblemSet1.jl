@@ -127,4 +127,95 @@ plot(vfi_solver(N=1001)[2], vfi_solver(N=1001)[4], xlabel="Capital (k)",
     title="Value Function Iteration Result",
     legend=false)
 
-# Test
+# b) 
+
+# changing tolerance to 1e-5
+print(vfi_solver(N=11, tolerance=1e-5)[1])
+print(vfi_solver(N=101, tolerance=1e-5)[1])
+print(vfi_solver(N=1001, tolerance=1e-5)[1])
+
+
+# plots with N = 11
+plot(vfi_solver(N=11, tolerance=1e-5)[2], vfi_solver(N=11, tolerance=1e-5)[3], xlabel="Capital (k)",
+    ylabel="Value Function V(k)",
+    title="Value Function Iteration Result",
+    legend=false)
+
+
+plot(vfi_solver(N=11, tolerance=1e-5)[2], vfi_solver(N=11, tolerance=1e-5)[4], xlabel="Capital (k)",
+    ylabel="Savings Function g(k)",
+    title="Value Function Iteration Result",
+    legend=false)
+
+
+# plots with N = 101
+plot(vfi_solver(N=101, tolerance=1e-5)[2], vfi_solver(N=101, tolerance=1e-5)[3], xlabel="Capital (k)",
+    ylabel="Value Function V(k)",
+    title="Value Function Iteration Result",
+    legend=false)
+
+
+plot(vfi_solver(N=101, tolerance=1e-5)[2], vfi_solver(N=101, tolerance=1e-5)[4], xlabel="Capital (k)",
+    ylabel="Savings Function g(k)",
+    title="Value Function Iteration Result",
+    legend=false)
+
+# plots with N = 1001
+plot(vfi_solver(N=1001, tolerance=1e-5)[2], vfi_solver(N=1001, tolerance=1e-5)[3], xlabel="Capital (k)",
+    ylabel="Value Function V(k)",
+    title="Value Function Iteration Result",
+    legend=false)
+
+
+plot(vfi_solver(N=1001, tolerance=1e-5)[2], vfi_solver(N=1001, tolerance=1e-5)[4], xlabel="Capital (k)",
+    ylabel="Savings Function g(k)",
+    title="Value Function Iteration Result",
+    legend=false)
+
+
+
+
+
+
+# changing tolerance to 1e-6
+print(vfi_solver(N=11, tolerance=1e-6)[1])
+print(vfi_solver(N=101, tolerance=1e-6)[1])
+print(vfi_solver(N=1001, tolerance=1e-6)[1])
+
+
+# plots with N = 11
+plot(vfi_solver(N=11, tolerance=1e-6)[2], vfi_solver(N=11, tolerance=1e-6)[3], xlabel="Capital (k)",
+    ylabel="Value Function V(k)",
+    title="Value Function Iteration Result",
+    legend=false)
+
+
+plot(vfi_solver(N=11, tolerance=1e-6)[2], vfi_solver(N=11, tolerance=1e-6)[4], xlabel="Capital (k)",
+    ylabel="Savings Function g(k)",
+    title="Value Function Iteration Result",
+    legend=false)
+
+
+# plots with N = 101
+plot(vfi_solver(N=101, tolerance=1e-6)[2], vfi_solver(N=101, tolerance=1e-6)[3], xlabel="Capital (k)",
+    ylabel="Value Function V(k)",
+    title="Value Function Iteration Result",
+    legend=false)
+
+
+plot(vfi_solver(N=101, tolerance=1e-6)[2], vfi_solver(N=101, tolerance=1e-6)[4], xlabel="Capital (k)",
+    ylabel="Savings Function g(k)",
+    title="Value Function Iteration Result",
+    legend=false)
+
+# plots with N = 1001
+plot(vfi_solver(N=1001, tolerance=1e-6)[2], vfi_solver(N=1001, tolerance=1e-6)[3], xlabel="Capital (k)",
+    ylabel="Value Function V(k)",
+    title="Value Function Iteration Result",
+    legend=false)
+
+
+plot(vfi_solver(N=1001, tolerance=1e-6)[2], vfi_solver(N=1001, tolerance=1e-6)[4], xlabel="Capital (k)",
+    ylabel="Savings Function g(k)",
+    title="Value Function Iteration Result",
+    legend=false)
