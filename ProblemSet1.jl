@@ -1,4 +1,3 @@
-
 # Question 3
 
 #a) 
