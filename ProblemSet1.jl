@@ -5,7 +5,7 @@
 
 #i)
 
-# Creats a function to run the vfi algorithum
+# Creates a function to run the vfi algorithm
 function vfi_solver(;
     alpha=0.4,
     delta=0.1,
@@ -84,93 +84,98 @@ function vfi_solver(;
 end
 
 # Call vfi_solver() to return number of iterations until convergance, V,s
-print(vfi_solver(N=11)[1])
-print(vfi_solver(N=101)[1])
-print(vfi_solver(N=1001)[1])
+sol11 = vfi_solver(N=11);
+sol101 = vfi_solver(N=101);
+sol1001 = vfi_solver(N=1001);
+
 
 
 using Plots
 # plots with N = 11
-plot(vfi_solver(N=11)[2], vfi_solver(N=11)[3], xlabel="Capital (k)",
+plot(sol11[2], sol11[3], xlabel="Capital (k)",
     ylabel="Value Function V(k)",
-    title="Value Function Iteration Result",
+    title="Value Function N = 11",
     legend=false)
 
 
-plot(vfi_solver(N=11)[2], vfi_solver(N=11)[4], xlabel="Capital (k)",
-    ylabel="Savings Function g(k)",
-    title="Value Function Iteration Result",
+plot(sol11[2], sol11[4], xlabel="Capital (k)",
+    ylabel="Policy Function g(k)",
+    title="Policy Function N = 11",
     legend=false)
 
 
 # plots with N = 101
-plot(vfi_solver(N=101)[2], vfi_solver(N=101)[3], xlabel="Capital (k)",
+plot(sol101[2], sol101[3], xlabel="Capital (k)",
     ylabel="Value Function V(k)",
-    title="Value Function Iteration Result",
+    title=" Value Function N = 101",
     legend=false)
 
 
-plot(vfi_solver(N=101)[2], vfi_solver(N=101)[4], xlabel="Capital (k)",
-    ylabel="Savings Function g(k)",
-    title="Value Function Iteration Result",
+plot(sol101[2], sol101[4], xlabel="Capital (k)",
+    ylabel="Policy Function g(k)",
+    title="Policy Function N = 101",
     legend=false)
 
 # plots with N = 1001
-plot(vfi_solver(N=1001)[2], vfi_solver(N=1001)[3], xlabel="Capital (k)",
+plot(sol1001[2], sol1001[3], xlabel="Capital (k)",
     ylabel="Value Function V(k)",
-    title="Value Function Iteration Result",
+    title="Value Function N = 1001",
     legend=false)
 
 
-plot(vfi_solver(N=1001)[2], vfi_solver(N=1001)[4], xlabel="Capital (k)",
-    ylabel="Savings Function g(k)",
-    title="Value Function Iteration Result",
+plot(sol1001[2], sol1001[4], xlabel="Capital (k)",
+    ylabel="Policy Function g(k)",
+    title="Policy Function N = 1001",
     legend=false)
+
+
 
 # b) 
 
 # changing tolerance to 1e-5
-print(vfi_solver(N=11, tolerance=1e-5)[1])
-print(vfi_solver(N=101, tolerance=1e-5)[1])
-print(vfi_solver(N=1001, tolerance=1e-5)[1])
+sol11 = vfi_solver(N=11, tolerance=1e-5);
+sol101 = vfi_solver(N=101, tolerance=1e-5);
+sol1001 = vfi_solver(N=1001, tolerance=1e-5);
 
 
 # plots with N = 11
-plot(vfi_solver(N=11, tolerance=1e-5)[2], vfi_solver(N=11, tolerance=1e-5)[3], xlabel="Capital (k)",
+plot(sol11[2], sol11[3], xlabel="Capital (k)",
     ylabel="Value Function V(k)",
-    title="Value Function Iteration Result",
+    title="Value Function N = 11, Tolerance = 1e-5",
     legend=false)
 
 
-plot(vfi_solver(N=11, tolerance=1e-5)[2], vfi_solver(N=11, tolerance=1e-5)[4], xlabel="Capital (k)",
-    ylabel="Savings Function g(k)",
-    title="Value Function Iteration Result",
+plot(sol11[2], sol11[4], xlabel="Capital (k)",
+    ylabel="Policy Function g(k)",
+    title="Policy Function N = 11, Tolerance = 1e-5",
     legend=false)
 
 
 # plots with N = 101
-plot(vfi_solver(N=101, tolerance=1e-5)[2], vfi_solver(N=101, tolerance=1e-5)[3], xlabel="Capital (k)",
+plot(sol101[2], sol101[3], xlabel="Capital (k)",
     ylabel="Value Function V(k)",
-    title="Value Function Iteration Result",
+    title="Value Function N = 101, Tolerance = 1e-5",
     legend=false)
 
 
-plot(vfi_solver(N=101, tolerance=1e-5)[2], vfi_solver(N=101, tolerance=1e-5)[4], xlabel="Capital (k)",
-    ylabel="Savings Function g(k)",
-    title="Value Function Iteration Result",
+plot(sol101[2], sol101[4], xlabel="Capital (k)",
+    ylabel="Policy Function g(k)",
+    title="Policy Function N = 101, Tolerance = 1e-5",
     legend=false)
 
 # plots with N = 1001
-plot(vfi_solver(N=1001, tolerance=1e-5)[2], vfi_solver(N=1001, tolerance=1e-5)[3], xlabel="Capital (k)",
+plot(sol1001[2], sol1001[3], xlabel="Capital (k)",
     ylabel="Value Function V(k)",
-    title="Value Function Iteration Result",
+    title="Value Function N = 1001, Tolerance = 1e-5",
     legend=false)
 
 
-plot(vfi_solver(N=1001, tolerance=1e-5)[2], vfi_solver(N=1001, tolerance=1e-5)[4], xlabel="Capital (k)",
-    ylabel="Savings Function g(k)",
-    title="Value Function Iteration Result",
+plot(sol1001[2], sol1001[4], xlabel="Capital (k)",
+    ylabel="Policy Function g(k)",
+    title="Policy Function N = 11, Tolerance = 1e-5",
     legend=false)
+
+
 
 
 
@@ -178,46 +183,46 @@ plot(vfi_solver(N=1001, tolerance=1e-5)[2], vfi_solver(N=1001, tolerance=1e-5)[4
 
 
 # changing tolerance to 1e-6
-print(vfi_solver(N=11, tolerance=1e-6)[1])
-print(vfi_solver(N=101, tolerance=1e-6)[1])
-print(vfi_solver(N=1001, tolerance=1e-6)[1])
+sol11 = vfi_solver(N=11, tolerance=1e-6)
+sol101 = vfi_solver(N=101, tolerance=1e-6)
+sol1001 = vfi_solver(N=1001, tolerance=1e-6)
 
 
 # plots with N = 11
-plot(vfi_solver(N=11, tolerance=1e-6)[2], vfi_solver(N=11, tolerance=1e-6)[3], xlabel="Capital (k)",
+plot(sol11[2], sol11[3], xlabel="Capital (k)",
     ylabel="Value Function V(k)",
-    title="Value Function Iteration Result",
+    title="Value Function N = 11, Tolerance = 1e-6",
     legend=false)
 
 
-plot(vfi_solver(N=11, tolerance=1e-6)[2], vfi_solver(N=11, tolerance=1e-6)[4], xlabel="Capital (k)",
-    ylabel="Savings Function g(k)",
-    title="Value Function Iteration Result",
+plot(sol11[2], sol11[4], xlabel="Capital (k)",
+    ylabel="Policy Function g(k)",
+    title="Policy Function N = 11, Tolerance = 1e-6",
     legend=false)
 
 
 # plots with N = 101
-plot(vfi_solver(N=101, tolerance=1e-6)[2], vfi_solver(N=101, tolerance=1e-6)[3], xlabel="Capital (k)",
+plot(sol101[2], sol101[3], xlabel="Capital (k)",
     ylabel="Value Function V(k)",
-    title="Value Function Iteration Result",
+    title="Value Function N = 101, Tolerance = 1e-6",
     legend=false)
 
 
-plot(vfi_solver(N=101, tolerance=1e-6)[2], vfi_solver(N=101, tolerance=1e-6)[4], xlabel="Capital (k)",
-    ylabel="Savings Function g(k)",
-    title="Value Function Iteration Result",
+plot(sol101[2], sol101[4], xlabel="Capital (k)",
+    ylabel="Policy Function g(k)",
+    title="Policy Function N = 101, Tolerance = 1e-6",
     legend=false)
 
 # plots with N = 1001
-plot(vfi_solver(N=1001, tolerance=1e-6)[2], vfi_solver(N=1001, tolerance=1e-6)[3], xlabel="Capital (k)",
+plot(sol1001[2], sol1001[3], xlabel="Capital (k)",
     ylabel="Value Function V(k)",
-    title="Value Function Iteration Result",
+    title="Value Function N = 1001, Tolerance = 1e-6",
     legend=false)
 
 
-plot(vfi_solver(N=1001, tolerance=1e-6)[2], vfi_solver(N=1001, tolerance=1e-6)[4], xlabel="Capital (k)",
-    ylabel="Savings Function g(k)",
-    title="Value Function Iteration Result",
+plot(sol1001[2], sol1001[4], xlabel="Capital (k)",
+    ylabel="Policy Function g(k)",
+    title="Policy Function N = 11, Tolerance = 1e-6",
     legend=false)
 
 
@@ -225,44 +230,44 @@ plot(vfi_solver(N=1001, tolerance=1e-6)[2], vfi_solver(N=1001, tolerance=1e-6)[4
 # c) 
 
 # setting delta = 1 and repeating part a) 
-print(vfi_solver(N=11, delta=1)[1])
-print(vfi_solver(N=101, delta=1)[1])
-print(vfi_solver(N=1001, delta=1)[1])
+sol11 = vfi_solver(N=11, delta=1)
+sol101 = vfi_solver(N=101, delta=1)
+sol1001 = vfi_solver(N=1001, delta=1)
 
 
 # plots with N = 11
-plot(vfi_solver(N=11, delta=1)[2], vfi_solver(N=11, delta=1)[3], xlabel="Capital (k)",
+plot(sol11[2], sol11[3], xlabel="Capital (k)",
     ylabel="Value Function V(k)",
-    title="Value Function Iteration Result",
+    title="Value Function N = 11, Delta = 1 ",
     legend=false)
 
 
-plot(vfi_solver(N=11, delta=1)[2], vfi_solver(N=11, delta=1)[4], xlabel="Capital (k)",
-    ylabel="Savings Function g(k)",
-    title="Value Function Iteration Result",
+plot(sol11[2], sol11[4], xlabel="Capital (k)",
+    ylabel="Policy Function g(k)",
+    title="Policy Function N = 11, Delta = 1 ",
     legend=false)
 
 
 # plots with N = 101
-plot(vfi_solver(N=101, delta=1)[2], vfi_solver(N=101, delta=1)[3], xlabel="Capital (k)",
+plot(sol101[2], sol101[3], xlabel="Capital (k)",
     ylabel="Value Function V(k)",
-    title="Value Function Iteration Result",
+    title="Value Function N = 101, Delta = 1 ",
     legend=false)
 
 
-plot(vfi_solver(N=101, delta=1)[2], vfi_solver(N=101, delta=1)[4], xlabel="Capital (k)",
-    ylabel="Savings Function g(k)",
-    title="Value Function Iteration Result",
+plot(sol101[2], sol101[4], xlabel="Capital (k)",
+    ylabel="Policy Function g(k)",
+    title="Policy Function N = 101, Delta = 1 ",
     legend=false)
 
 # plots with N = 1001
-plot(vfi_solver(N=1001, delta=1)[2], vfi_solver(N=1001, delta=1)[3], xlabel="Capital (k)",
+plot(sol1001[2], sol1001[3], xlabel="Capital (k)",
     ylabel="Value Function V(k)",
-    title="Value Function Iteration Result",
+    title="Value Function N = 1001, Delta = 1 ",
     legend=false)
 
 
-plot(vfi_solver(N=1001, delta=1)[2], vfi_solver(N=1001, delta=1)[4], xlabel="Capital (k)",
-    ylabel="Savings Function g(k)",
-    title="Value Function Iteration Result",
+plot(sol1001[2], sol1001[4], xlabel="Capital (k)",
+    ylabel="Policy Function g(k)",
+    title="Policy Function N = 11, Delta = 1 ",
     legend=false)
