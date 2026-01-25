@@ -1,3 +1,24 @@
+# Question 1
+
+# Define parameters 
+a = 1
+b = 100000
+n = range(-8, stop=-1, length=8)
+c = 10 .^ n
+
+# Compute roots using the quadratic formula 
+x1 = (-b .+ sqrt.(b^2 .- 4 .* a .* c)) ./ (2 .* a)
+x2 = (-b .- sqrt.(b^2 .- 4 .* a .* c)) ./ (2 .* a)
+
+# Compute roots using alternative method 
+q = (-1 / 2) .* (b .+ sign(b) .* sqrt.(b^2 .- 4 .* a .* c))
+
+x1_new = c ./ q
+x2_new = q ./ a
+
+table = hcat(n, c, x1, x1_new, abs.(x1 .- x1_new))
+table = hcat(n, c, x2, x2_new, abs.(x2 .- x2_new))
+
 # Question 3
 
 #a) 
@@ -171,7 +192,7 @@ plot(sol1001[2], sol1001[3], xlabel="Capital (k)",
 
 plot(sol1001[2], sol1001[4], xlabel="Capital (k)",
     ylabel="Policy Function g(k)",
-    title="Policy Function N = 11, Tolerance = 1e-5",
+    title="Policy Function N = 1001, Tolerance = 1e-5",
     legend=false)
 
 
@@ -182,9 +203,9 @@ plot(sol1001[2], sol1001[4], xlabel="Capital (k)",
 
 
 # changing tolerance to 1e-6
-sol11 = vfi_solver(N=11, tolerance=1e-6)
-sol101 = vfi_solver(N=101, tolerance=1e-6)
-sol1001 = vfi_solver(N=1001, tolerance=1e-6)
+sol11 = vfi_solver(N=11, tolerance=1e-6);
+sol101 = vfi_solver(N=101, tolerance=1e-6);
+sol1001 = vfi_solver(N=1001, tolerance=1e-6);
 
 
 # plots with N = 11
@@ -270,3 +291,33 @@ plot(sol1001[2], sol1001[4], xlabel="Capital (k)",
     ylabel="Policy Function g(k)",
     title="Policy Function N = 11, Delta = 1 ",
     legend=false)
+
+# Analytical solution 
+alpha = 0.4
+A = 1.0
+beta = 0.96
+
+a = (1 / (1 - beta)) * (1 / (1 - alpha * beta)) * (log(A) + (1 - alpha * beta) * log(1 - alpha * beta) + alpha * beta * log(alpha * beta))
+b = alpha / (1 - alpha * beta)
+
+PolicyFunction = alpha * beta * A .* sol1001[2] .^ alpha
+ValueFunction = a .+ b .* log.(sol1001[2])
+
+# Plots closed form vs VFI value function solution
+plot(sol1001[2], ValueFunction, xlabel="Capital (K)",
+    ylabel="Value Function V(k)",
+    title="Closed Form vs VFI Value Function N = 1001, delta = 1",
+    legend=true,
+    label="Closed Form Solution")
+plot!(sol1001[2], sol1001[3],
+    label="VFI Solution")
+
+# Plots closed form vs VFI policy function solution
+plot(sol1001[2], PolicyFunction, xlabel="Capital (K)",
+    ylabel="Policy Function g(k)",
+    title="Closed Form vs VFI Policy Function N = 1001, delta = 1",
+    legend=true,
+    label="Closed Form Solution")
+plot!(sol1001[2], sol1001[4],
+    label="VFI Solution")
+
