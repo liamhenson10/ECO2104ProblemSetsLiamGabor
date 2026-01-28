@@ -121,11 +121,13 @@ p2 = plot(sol11[2], sol11[4], xlabel="Capital (k)",
     ylabel="Policy Function g(k)",
     legend=false);
 
-display(plot(p1, p2, layout=(1, 2),
+p = plot(p1, p2, layout=(1, 2),
     plot_title="Value and Policy Functions N = 11",
     size=(1000, 500),
     left_margin=5mm,
-    bottom_margin=5mm))
+    bottom_margin=5mm);
+display(p)
+savefig(p, "/Users/liamhenson/Documents/UofT/ECO2104/Problem Set 1/Plots/Q3a_N11.png")
 
 
 # plots with N = 101
@@ -137,11 +139,13 @@ p2 = plot(sol101[2], sol101[4], xlabel="Capital (k)",
     ylabel="Policy Function g(k)",
     legend=false);
 
-display(plot(p1, p2, layout=(1, 2),
+p = plot(p1, p2, layout=(1, 2),
     plot_title="Value and Policy Functions N = 101",
     size=(1000, 500),
     left_margin=5mm,
-    bottom_margin=5mm))
+    bottom_margin=5mm);
+display(p)
+savefig(p, "/Users/liamhenson/Documents/UofT/ECO2104/Problem Set 1/Plots/Q3a_N101.png")
 
 # plots with N = 1001
 p1 = plot(sol1001[2], sol1001[3], xlabel="Capital (k)",
@@ -152,11 +156,13 @@ p2 = plot(sol1001[2], sol1001[4], xlabel="Capital (k)",
     ylabel="Policy Function g(k)",
     legend=false);
 
-display(plot(p1, p2, layout=(1, 2),
+p = plot(p1, p2, layout=(1, 2),
     plot_title="Value and Policy Functions N = 1001",
     size=(1000, 500),
     left_margin=5mm,
-    bottom_margin=5mm))
+    bottom_margin=5mm);
+display(p)
+savefig(p, "/Users/liamhenson/Documents/UofT/ECO2104/Problem Set 1/Plots/Q3a_N1001.png")
 
 
 
@@ -177,11 +183,13 @@ p2 = plot(sol11[2], sol11[4], xlabel="Capital (k)",
     ylabel="Policy Function g(k)",
     legend=false);
 
-display(plot(p1, p2, layout=(1, 2),
+p = plot(p1, p2, layout=(1, 2),
     plot_title="Value and Policy Functions N = 11, Tolerance = 1e-5",
     size=(1000, 500),
     left_margin=5mm,
-    bottom_margin=5mm))
+    bottom_margin=5mm);
+display(p)
+savefig(p, "/Users/liamhenson/Documents/UofT/ECO2104/Problem Set 1/Plots/Q3b_N11_tol1e-5.png")
 
 
 # plots with N = 101
@@ -193,11 +201,13 @@ p2 = plot(sol101[2], sol101[4], xlabel="Capital (k)",
     ylabel="Policy Function g(k)",
     legend=false);
 
-display(plot(p1, p2, layout=(1, 2),
+p = plot(p1, p2, layout=(1, 2),
     plot_title="Value and Policy Functions N = 101, Tolerance = 1e-5",
     size=(1000, 500),
     left_margin=5mm,
-    bottom_margin=5mm))
+    bottom_margin=5mm);
+display(p)
+savefig(p, "/Users/liamhenson/Documents/UofT/ECO2104/Problem Set 1/Plots/Q3b_N101_tol1e-5.png")
 
 # plots with N = 1001
 p1 = plot(sol1001[2], sol1001[3], xlabel="Capital (k)",
@@ -208,14 +218,13 @@ p2 = plot(sol1001[2], sol1001[4], xlabel="Capital (k)",
     ylabel="Policy Function g(k)",
     legend=false);
 
-display(plot(p1, p2, layout=(1, 2),
+p = plot(p1, p2, layout=(1, 2),
     plot_title="Value and Policy Functions N = 1001, Tolerance = 1e-5",
     size=(1000, 500),
     left_margin=5mm,
-    bottom_margin=5mm))
-
-
-
+    bottom_margin=5mm);
+display(p)
+savefig(p, "/Users/liamhenson/Documents/UofT/ECO2104/Problem Set 1/Plots/Q3b_N1001_tol1e-5.png")
 
 
 
@@ -234,11 +243,13 @@ p2 = plot(sol11[2], sol11[4], xlabel="Capital (k)",
     ylabel="Policy Function g(k)",
     legend=false);
 
-display(plot(p1, p2, layout=(1, 2),
+p = plot(p1, p2, layout=(1, 2),
     plot_title="Value and Policy Functions N = 11, Tolerance = 1e-6",
     size=(1000, 500),
     left_margin=5mm,
-    bottom_margin=5mm))
+    bottom_margin=5mm);
+display(p)
+savefig(p, "/Users/liamhenson/Documents/UofT/ECO2104/Problem Set 1/Plots/Q3b_N11_tol1e-6.png")
 
 
 
@@ -251,11 +262,13 @@ p2 = plot(sol101[2], sol101[4], xlabel="Capital (k)",
     ylabel="Policy Function g(k)",
     legend=false);
 
-display(plot(p1, p2, layout=(1, 2),
+p = plot(p1, p2, layout=(1, 2),
     plot_title="Value and Policy Functions N = 101, Tolerance = 1e-6",
     size=(1000, 500),
     left_margin=5mm,
-    bottom_margin=5mm))
+    bottom_margin=5mm);
+display(p)
+savefig(p, "/Users/liamhenson/Documents/UofT/ECO2104/Problem Set 1/Plots/Q3b_N101_tol1e-6.png")
 
 # plots with N = 1001
 p1 = plot(sol1001[2], sol1001[3], xlabel="Capital (k)",
@@ -266,11 +279,13 @@ p2 = plot(sol1001[2], sol1001[4], xlabel="Capital (k)",
     ylabel="Policy Function g(k)",
     legend=false);
 
-display(plot(p1, p2, layout=(1, 2),
+p = plot(p1, p2, layout=(1, 2),
     plot_title="Value and Policy Functions N = 1001, Tolerance = 1e-6",
     size=(1000, 500),
     left_margin=5mm,
-    bottom_margin=5mm))
+    bottom_margin=5mm);
+display(p)
+savefig(p, "/Users/liamhenson/Documents/UofT/ECO2104/Problem Set 1/Plots/Q3b_N1001_tol1e-6.png")
 
 
 
@@ -291,11 +306,13 @@ p2 = plot(sol11[2], sol11[4], xlabel="Capital (k)",
     ylabel="Policy Function g(k)",
     legend=false);
 
-display(plot(p1, p2, layout=(1, 2),
+p = plot(p1, p2, layout=(1, 2),
     plot_title="Value and Policy Functions N = 11, Delta = 1",
     size=(1000, 500),
     left_margin=5mm,
-    bottom_margin=5mm))
+    bottom_margin=5mm);
+display(p)
+savefig(p, "/Users/liamhenson/Documents/UofT/ECO2104/Problem Set 1/Plots/Q3c_N11_delta1.png")
 
 
 # plots with N = 101
@@ -307,11 +324,13 @@ p2 = plot(sol101[2], sol101[4], xlabel="Capital (k)",
     ylabel="Policy Function g(k)",
     legend=false);
 
-display(plot(p1, p2, layout=(1, 2),
+p = plot(p1, p2, layout=(1, 2),
     plot_title="Value and Policy Functions N = 101, Delta = 1",
     size=(1000, 500),
     left_margin=5mm,
-    bottom_margin=5mm))
+    bottom_margin=5mm);
+display(p)
+savefig(p, "/Users/liamhenson/Documents/UofT/ECO2104/Problem Set 1/Plots/Q3c_N101_delta1.png")
 
 # plots with N = 1001
 p1 = plot(sol1001[2], sol1001[3], xlabel="Capital (k)",
@@ -322,11 +341,13 @@ p2 = plot(sol1001[2], sol1001[4], xlabel="Capital (k)",
     ylabel="Policy Function g(k)",
     legend=false);
 
-display(plot(p1, p2, layout=(1, 2),
+p = plot(p1, p2, layout=(1, 2),
     plot_title="Value and Policy Functions N = 1001, Delta = 1",
     size=(1000, 500),
     left_margin=5mm,
-    bottom_margin=5mm))
+    bottom_margin=5mm);
+display(p)
+savefig(p, "/Users/liamhenson/Documents/UofT/ECO2104/Problem Set 1/Plots/Q3c_N1001_delta1.png")
 
 # Analytical solution 
 alpha = 0.4
@@ -357,14 +378,10 @@ p2 = plot(sol1001[2], PolicyFunction, xlabel="Capital (K)",
 plot!(p2, sol1001[2], sol1001[4],
     label="VFI Solution");
 
-display(plot(p1, p2, layout=(1, 2),
+p = plot(p1, p2, layout=(1, 2),
     plot_title="Closed Form vs VFI Solutions N = 1001, Delta = 1",
     size=(1000, 500),
     left_margin=5mm,
-    bottom_margin=5mm))
-
-
-
-
-
-
+    bottom_margin=5mm);
+display(p)
+savefig(p, "/Users/liamhenson/Documents/UofT/ECO2104/Problem Set 1/Plots/Q3c_closedform_vs_vfi_N1001_delta1.png")
