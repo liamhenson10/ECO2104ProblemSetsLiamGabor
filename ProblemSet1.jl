@@ -50,7 +50,7 @@ function vfi_solver(;
     max_index = zeros(Int, N)
 
     # Runs VFI algorithm
-    for iter in 1:maxiter # for testing that loop converges, (to be replaced with while loop once code works)
+    for iter in 1:maxiter # for testing that loop converges so code wont crash 
 
         # maximization step
         for i in 1:N
@@ -88,7 +88,7 @@ function vfi_solver(;
             s_new[i] = k[max_index[i]]
         end
 
-        # Checks if stopping criteria is met (policy convergence)
+        # Checks if stopping criteria is met policy convergence
         if maximum(abs.(s_new .- s)) < tolerance
             V .= V_new
             s .= s_new
@@ -169,9 +169,10 @@ savefig(p, "/Users/liamhenson/Documents/UofT/ECO2104/Problem Set 1/Plots/Q3a_N10
 # b) 
 
 # changing tolerance to 1e-5
-sol11 = vfi_solver(N=11, tolerance=1e-5);
-sol101 = vfi_solver(N=101, tolerance=1e-5);
-sol1001 = vfi_solver(N=1001, tolerance=1e-5);
+sol11 = vfi_solver(N=11, tolerance=1e-5)
+sol101 = vfi_solver(N=101, tolerance=1e-5)
+sol1001 = vfi_solver(N=1001, tolerance=1e-5)
+
 
 
 # plots with N = 11
@@ -229,9 +230,9 @@ savefig(p, "/Users/liamhenson/Documents/UofT/ECO2104/Problem Set 1/Plots/Q3b_N10
 
 
 # changing tolerance to 1e-6
-sol11 = vfi_solver(N=11, tolerance=1e-6);
-sol101 = vfi_solver(N=101, tolerance=1e-6);
-sol1001 = vfi_solver(N=1001, tolerance=1e-6);
+sol11 = vfi_solver(N=11, tolerance=1e-6)
+sol101 = vfi_solver(N=101, tolerance=1e-6)
+sol1001 = vfi_solver(N=1001, tolerance=1e-6)
 
 
 # plots with N = 11
