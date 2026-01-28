@@ -33,7 +33,7 @@ function vfi_solver(;
     beta=0.95,
     N=11,
     k_min=0.1,
-    k_max=50.0,
+    k_max=10.0,
     tolerance=1e-8,
     maxiter=10_000
 )
