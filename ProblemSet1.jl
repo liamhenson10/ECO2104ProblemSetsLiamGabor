@@ -30,7 +30,7 @@ function vfi_solver(;
     alpha=0.4,
     delta=0.1,
     A=1.0,
-    beta=0.96,
+    beta=0.95,
     N=11,
     k_min=0.1,
     k_max=50.0,
@@ -104,49 +104,59 @@ function vfi_solver(;
 end
 
 # Call vfi_solver() to return number of iterations until convergance, V,s
-sol11 = vfi_solver(N=11);
-sol101 = vfi_solver(N=101);
-sol1001 = vfi_solver(N=1001);
+sol11 = vfi_solver(N=11)
+sol101 = vfi_solver(N=101)
+sol1001 = vfi_solver(N=1001)
 
 
 
 using Plots
+using Measures
 # plots with N = 11
-plot(sol11[2], sol11[3], xlabel="Capital (k)",
+p1 = plot(sol11[2], sol11[3], xlabel="Capital (k)",
     ylabel="Value Function V(k)",
-    title="Value Function N = 11",
-    legend=false)
+    legend=false);
 
-
-plot(sol11[2], sol11[4], xlabel="Capital (k)",
+p2 = plot(sol11[2], sol11[4], xlabel="Capital (k)",
     ylabel="Policy Function g(k)",
-    title="Policy Function N = 11",
-    legend=false)
+    legend=false);
+
+display(plot(p1, p2, layout=(1, 2),
+    plot_title="Value and Policy Functions N = 11",
+    size=(1000, 500),
+    left_margin=5mm,
+    bottom_margin=5mm))
 
 
 # plots with N = 101
-plot(sol101[2], sol101[3], xlabel="Capital (k)",
+p1 = plot(sol101[2], sol101[3], xlabel="Capital (k)",
     ylabel="Value Function V(k)",
-    title=" Value Function N = 101",
-    legend=false)
+    legend=false);
 
-
-plot(sol101[2], sol101[4], xlabel="Capital (k)",
+p2 = plot(sol101[2], sol101[4], xlabel="Capital (k)",
     ylabel="Policy Function g(k)",
-    title="Policy Function N = 101",
-    legend=false)
+    legend=false);
+
+display(plot(p1, p2, layout=(1, 2),
+    plot_title="Value and Policy Functions N = 101",
+    size=(1000, 500),
+    left_margin=5mm,
+    bottom_margin=5mm))
 
 # plots with N = 1001
-plot(sol1001[2], sol1001[3], xlabel="Capital (k)",
+p1 = plot(sol1001[2], sol1001[3], xlabel="Capital (k)",
     ylabel="Value Function V(k)",
-    title="Value Function N = 1001",
-    legend=false)
+    legend=false);
 
-
-plot(sol1001[2], sol1001[4], xlabel="Capital (k)",
+p2 = plot(sol1001[2], sol1001[4], xlabel="Capital (k)",
     ylabel="Policy Function g(k)",
-    title="Policy Function N = 1001",
-    legend=false)
+    legend=false);
+
+display(plot(p1, p2, layout=(1, 2),
+    plot_title="Value and Policy Functions N = 1001",
+    size=(1000, 500),
+    left_margin=5mm,
+    bottom_margin=5mm))
 
 
 
@@ -159,43 +169,50 @@ sol1001 = vfi_solver(N=1001, tolerance=1e-5);
 
 
 # plots with N = 11
-plot(sol11[2], sol11[3], xlabel="Capital (k)",
+p1 = plot(sol11[2], sol11[3], xlabel="Capital (k)",
     ylabel="Value Function V(k)",
-    title="Value Function N = 11, Tolerance = 1e-5",
-    legend=false)
+    legend=false);
 
-
-plot(sol11[2], sol11[4], xlabel="Capital (k)",
+p2 = plot(sol11[2], sol11[4], xlabel="Capital (k)",
     ylabel="Policy Function g(k)",
-    title="Policy Function N = 11, Tolerance = 1e-5",
-    legend=false)
+    legend=false);
+
+display(plot(p1, p2, layout=(1, 2),
+    plot_title="Value and Policy Functions N = 11, Tolerance = 1e-5",
+    size=(1000, 500),
+    left_margin=5mm,
+    bottom_margin=5mm))
 
 
 # plots with N = 101
-plot(sol101[2], sol101[3], xlabel="Capital (k)",
+p1 = plot(sol101[2], sol101[3], xlabel="Capital (k)",
     ylabel="Value Function V(k)",
-    title="Value Function N = 101, Tolerance = 1e-5",
-    legend=false)
+    legend=false);
 
-
-plot(sol101[2], sol101[4], xlabel="Capital (k)",
+p2 = plot(sol101[2], sol101[4], xlabel="Capital (k)",
     ylabel="Policy Function g(k)",
-    title="Policy Function N = 101, Tolerance = 1e-5",
-    legend=false)
+    legend=false);
+
+display(plot(p1, p2, layout=(1, 2),
+    plot_title="Value and Policy Functions N = 101, Tolerance = 1e-5",
+    size=(1000, 500),
+    left_margin=5mm,
+    bottom_margin=5mm))
 
 # plots with N = 1001
-plot(sol1001[2], sol1001[3], xlabel="Capital (k)",
+p1 = plot(sol1001[2], sol1001[3], xlabel="Capital (k)",
     ylabel="Value Function V(k)",
-    title="Value Function N = 1001, Tolerance = 1e-5",
-    legend=false)
+    legend=false);
 
-
-plot(sol1001[2], sol1001[4], xlabel="Capital (k)",
+p2 = plot(sol1001[2], sol1001[4], xlabel="Capital (k)",
     ylabel="Policy Function g(k)",
-    title="Policy Function N = 1001, Tolerance = 1e-5",
-    legend=false)
+    legend=false);
 
-
+display(plot(p1, p2, layout=(1, 2),
+    plot_title="Value and Policy Functions N = 1001, Tolerance = 1e-5",
+    size=(1000, 500),
+    left_margin=5mm,
+    bottom_margin=5mm))
 
 
 
@@ -209,41 +226,51 @@ sol1001 = vfi_solver(N=1001, tolerance=1e-6);
 
 
 # plots with N = 11
-plot(sol11[2], sol11[3], xlabel="Capital (k)",
+p1 = plot(sol11[2], sol11[3], xlabel="Capital (k)",
     ylabel="Value Function V(k)",
-    title="Value Function N = 11, Tolerance = 1e-6",
-    legend=false)
+    legend=false);
 
-
-plot(sol11[2], sol11[4], xlabel="Capital (k)",
+p2 = plot(sol11[2], sol11[4], xlabel="Capital (k)",
     ylabel="Policy Function g(k)",
-    title="Policy Function N = 11, Tolerance = 1e-6",
-    legend=false)
+    legend=false);
+
+display(plot(p1, p2, layout=(1, 2),
+    plot_title="Value and Policy Functions N = 11, Tolerance = 1e-6",
+    size=(1000, 500),
+    left_margin=5mm,
+    bottom_margin=5mm))
+
 
 
 # plots with N = 101
-plot(sol101[2], sol101[3], xlabel="Capital (k)",
+p1 = plot(sol101[2], sol101[3], xlabel="Capital (k)",
     ylabel="Value Function V(k)",
-    title="Value Function N = 101, Tolerance = 1e-6",
-    legend=false)
+    legend=false);
 
-
-plot(sol101[2], sol101[4], xlabel="Capital (k)",
+p2 = plot(sol101[2], sol101[4], xlabel="Capital (k)",
     ylabel="Policy Function g(k)",
-    title="Policy Function N = 101, Tolerance = 1e-6",
-    legend=false)
+    legend=false);
+
+display(plot(p1, p2, layout=(1, 2),
+    plot_title="Value and Policy Functions N = 101, Tolerance = 1e-6",
+    size=(1000, 500),
+    left_margin=5mm,
+    bottom_margin=5mm))
 
 # plots with N = 1001
-plot(sol1001[2], sol1001[3], xlabel="Capital (k)",
+p1 = plot(sol1001[2], sol1001[3], xlabel="Capital (k)",
     ylabel="Value Function V(k)",
-    title="Value Function N = 1001, Tolerance = 1e-6",
-    legend=false)
+    legend=false);
 
-
-plot(sol1001[2], sol1001[4], xlabel="Capital (k)",
+p2 = plot(sol1001[2], sol1001[4], xlabel="Capital (k)",
     ylabel="Policy Function g(k)",
-    title="Policy Function N = 11, Tolerance = 1e-6",
-    legend=false)
+    legend=false);
+
+display(plot(p1, p2, layout=(1, 2),
+    plot_title="Value and Policy Functions N = 1001, Tolerance = 1e-6",
+    size=(1000, 500),
+    left_margin=5mm,
+    bottom_margin=5mm))
 
 
 
@@ -256,46 +283,55 @@ sol1001 = vfi_solver(N=1001, delta=1)
 
 
 # plots with N = 11
-plot(sol11[2], sol11[3], xlabel="Capital (k)",
+p1 = plot(sol11[2], sol11[3], xlabel="Capital (k)",
     ylabel="Value Function V(k)",
-    title="Value Function N = 11, Delta = 1 ",
-    legend=false)
+    legend=false);
 
-
-plot(sol11[2], sol11[4], xlabel="Capital (k)",
+p2 = plot(sol11[2], sol11[4], xlabel="Capital (k)",
     ylabel="Policy Function g(k)",
-    title="Policy Function N = 11, Delta = 1 ",
-    legend=false)
+    legend=false);
+
+display(plot(p1, p2, layout=(1, 2),
+    plot_title="Value and Policy Functions N = 11, Delta = 1",
+    size=(1000, 500),
+    left_margin=5mm,
+    bottom_margin=5mm))
 
 
 # plots with N = 101
-plot(sol101[2], sol101[3], xlabel="Capital (k)",
+p1 = plot(sol101[2], sol101[3], xlabel="Capital (k)",
     ylabel="Value Function V(k)",
-    title="Value Function N = 101, Delta = 1 ",
-    legend=false)
+    legend=false);
 
-
-plot(sol101[2], sol101[4], xlabel="Capital (k)",
+p2 = plot(sol101[2], sol101[4], xlabel="Capital (k)",
     ylabel="Policy Function g(k)",
-    title="Policy Function N = 101, Delta = 1 ",
-    legend=false)
+    legend=false);
+
+display(plot(p1, p2, layout=(1, 2),
+    plot_title="Value and Policy Functions N = 101, Delta = 1",
+    size=(1000, 500),
+    left_margin=5mm,
+    bottom_margin=5mm))
 
 # plots with N = 1001
-plot(sol1001[2], sol1001[3], xlabel="Capital (k)",
+p1 = plot(sol1001[2], sol1001[3], xlabel="Capital (k)",
     ylabel="Value Function V(k)",
-    title="Value Function N = 1001, Delta = 1 ",
-    legend=false)
+    legend=false);
 
-
-plot(sol1001[2], sol1001[4], xlabel="Capital (k)",
+p2 = plot(sol1001[2], sol1001[4], xlabel="Capital (k)",
     ylabel="Policy Function g(k)",
-    title="Policy Function N = 11, Delta = 1 ",
-    legend=false)
+    legend=false);
+
+display(plot(p1, p2, layout=(1, 2),
+    plot_title="Value and Policy Functions N = 1001, Delta = 1",
+    size=(1000, 500),
+    left_margin=5mm,
+    bottom_margin=5mm))
 
 # Analytical solution 
 alpha = 0.4
 A = 1.0
-beta = 0.96
+beta = 0.95
 
 a = (1 / (1 - beta)) * (1 / (1 - alpha * beta)) * (log(A) + (1 - alpha * beta) * log(1 - alpha * beta) + alpha * beta * log(alpha * beta))
 b = alpha / (1 - alpha * beta)
@@ -304,20 +340,31 @@ PolicyFunction = alpha * beta * A .* sol1001[2] .^ alpha
 ValueFunction = a .+ b .* log.(sol1001[2])
 
 # Plots closed form vs VFI value function solution
-plot(sol1001[2], ValueFunction, xlabel="Capital (K)",
+p1 = plot(sol1001[2], ValueFunction, xlabel="Capital (K)",
     ylabel="Value Function V(k)",
-    title="Closed Form vs VFI Value Function N = 1001, delta = 1",
     legend=true,
-    label="Closed Form Solution")
-plot!(sol1001[2], sol1001[3],
-    label="VFI Solution")
+    label="Closed Form Solution");
+
+plot!(p1, sol1001[2], sol1001[3],
+    label="VFI Solution");
 
 # Plots closed form vs VFI policy function solution
-plot(sol1001[2], PolicyFunction, xlabel="Capital (K)",
+p2 = plot(sol1001[2], PolicyFunction, xlabel="Capital (K)",
     ylabel="Policy Function g(k)",
-    title="Closed Form vs VFI Policy Function N = 1001, delta = 1",
     legend=true,
-    label="Closed Form Solution")
-plot!(sol1001[2], sol1001[4],
-    label="VFI Solution")
+    label="Closed Form Solution");
+
+plot!(p2, sol1001[2], sol1001[4],
+    label="VFI Solution");
+
+display(plot(p1, p2, layout=(1, 2),
+    plot_title="Closed Form vs VFI Solutions N = 1001, Delta = 1",
+    size=(1000, 500),
+    left_margin=5mm,
+    bottom_margin=5mm))
+
+
+
+
+
 
