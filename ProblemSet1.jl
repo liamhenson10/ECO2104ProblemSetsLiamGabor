@@ -17,7 +17,9 @@ x1_new = c ./ q
 x2_new = q ./ a
 
 table = hcat(n, c, x1, x1_new, abs.(x1 .- x1_new))
+table
 table = hcat(n, c, x2, x2_new, abs.(x2 .- x2_new))
+table
 
 # Question 3
 
