@@ -2,6 +2,8 @@
 # Liam Henson and Gabor Swistak
 # Jan 30, 2026
 
+using Plots
+using Measures
 
 # Question 1
 
@@ -53,11 +55,11 @@ phis_recursion[2]
 phis_power
 phis_recursion
 
-plot(1:21, (phis_power), labels = ["Power Method"], xlabel="n", ylabel="φⁿ", title="Comparison of Methods for Computing φⁿ")
-plot!(1:21, (phis_recursion), labels = ["Recursion Method"])
+plot(1:21, (phis_power), labels=["Power Method"], xlabel="n", ylabel="φⁿ", title="Comparison of Methods for Computing φⁿ")
+plot!(1:21, (phis_recursion), labels=["Recursion Method"])
 
-plot(15:21, (phis_power[15:21]), labels = ["Power Method", "Recursion Method"])
-plot!(15:21, (phis_recursion[15:21]), labels = ["Recursion Method"])
+plot(15:21, (phis_power[15:21]), labels=["Power Method", "Recursion Method"])
+plot!(15:21, (phis_recursion[15:21]), labels=["Recursion Method"])
 
 difference_phi = phis_power .- phis_recursion
 difference_phi
@@ -156,9 +158,6 @@ sol101 = vfi_solver(N=101)
 sol1001 = vfi_solver(N=1001)
 
 
-
-using Plots
-using Measures
 # plots with N = 11
 p1 = plot(sol11[2], sol11[3], xlabel="Capital (k)",
     ylabel="Value Function V(k)",
